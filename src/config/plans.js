@@ -5,7 +5,8 @@ module.exports = {
       clothing: 5,
       activity: 5,
       weather: 1
-    }
+    },
+    rateLimit: 2 // Reduced for testing
   },
 
   medium: {
@@ -14,7 +15,9 @@ module.exports = {
       clothing: 3,
       activity: 3,
       weather: 1
-    }
+    },
+    // rateLimit: 30
+    rateLimit: 3
   },
 
   premium: {
@@ -23,6 +26,7 @@ module.exports = {
       clothing: 1,
       activity: 1,
       weather: 0 // Free weather for premium? Or 1. Let's keep 1 for consistency with prev state.
-    }
+    },
+    rateLimit: 4 // Reduced for testing
   }
 }

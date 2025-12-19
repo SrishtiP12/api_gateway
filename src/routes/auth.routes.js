@@ -2,6 +2,9 @@ const router = require('express').Router()
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const rateLimiter = require('../middleware/rateLimiter')
+
+router.use(rateLimiter)
 
 router.post('/login', async (req, res) => {
   const user = await User.findOne({ email: req.body.email })
