@@ -26,7 +26,8 @@ const limiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   validate: {
     trustProxy: false,
-    ip: false
+    ip: false,
+    keyGeneratorIpFallback: false
   }
 })
 

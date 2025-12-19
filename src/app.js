@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 
 app.use(express.json())
+app.use(require('./middleware/requestLogger'))
 
+app.use('/health', require('./routes/health.routes'))
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/admin', require('./routes/admin.routes'))
 app.use('/api', require('./routes/api.routes'))
