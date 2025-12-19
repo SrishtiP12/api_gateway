@@ -2,27 +2,27 @@ module.exports = {
   go: {
     totalCredits: 100,
     apiCost: {
-      service1: 1,
-      service2: 2,
-      weather: 5
+      clothing: 5,
+      activity: 5,
+      weather: 1
     }
   },
 
   medium: {
     totalCredits: 500,
     apiCost: {
-      service1: 1,
-      service2: 2,
-      weather: 3
+      clothing: 3,
+      activity: 3,
+      weather: 1
     }
   },
 
   premium: {
     totalCredits: 2000,
     apiCost: {
-      service1: 1,
-      service2: 1,
-      weather: 1
+      clothing: 1,
+      activity: 1,
+      weather: 0 // Free weather for premium? Or 1. Let's keep 1 for consistency with prev state.
     }
   }
 }

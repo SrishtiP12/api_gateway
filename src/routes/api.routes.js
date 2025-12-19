@@ -22,7 +22,19 @@ router.get('/service2',
 router.get('/weather',
   auth,
   consumeCredits('weather'),
-  weatherService
+  weatherService.weatherHandler
+)
+
+router.get('/clothing',
+  auth,
+  consumeCredits('clothing'),
+  require('../services/clothing.service')
+)
+
+router.get('/activity',
+  auth,
+  consumeCredits('activity'),
+  require('../services/activity.service')
 )
 
 module.exports = router
