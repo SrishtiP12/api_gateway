@@ -2,6 +2,7 @@ const router = require('express').Router()
 const auth = require('../middleware/auth')
 const rateLimiter = require('../middleware/rateLimiter')
 const consumeCredits = require('../middleware/consumeCredits')
+const cache = require('../middleware/cache')
 const weatherService = require('../services/weather.service')
 
 // Apply auth and rate limiting to all API routes
@@ -24,6 +25,7 @@ router.get('/service2',
 
 router.get('/weather',
   consumeCredits('weather'),
+  cache(3600), // Cache for 1 hour
   weatherService.weatherHandler
 )
 
